@@ -1,6 +1,6 @@
 # Basic workflow to generate a macos binary
 
-name: Build MacOS Binary
+name: MacOS Build
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
@@ -11,8 +11,9 @@ on:
     branches: [ master ]
 
 jobs:
-  Generate Binary:
+  generate-binary:
     runs-on: macos-latest
+    name: Generate Binary File
     steps:
     - uses: actions/checkout@v2 # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - name: Setup Python
