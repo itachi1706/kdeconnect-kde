@@ -26,9 +26,9 @@ jobs:
     #- name: Fix Craft install
     #  run: /Applications/Python3.8/Install/Certificates.command
     - name: Download Craft
-      run: curl https://raw.githubusercontent.com/KDE/craft/master/setup/CraftBootstrap.py -o setup.py
+      run: curl https://raw.githubusercontent.com/itachi1706/craft/master/setup/CraftBootstrap.py -o setup.py
     - name: Install Craft
-      run: echo "Yes" | python3 setup.py --prefix ~/CraftRoot
+      run: python3 setup.py --prefix ~/CraftRoot
     - name: Setup Craft
       run: source ~/CraftRoot/craft/craftenv.sh
     - name: Generate stuff
