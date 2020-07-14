@@ -25,11 +25,12 @@ jobs:
       run: curl https://raw.githubusercontent.com/itachi1706/craft/master/setup/CraftBootstrap.py -o setup.py
     - name: Install Craft
       run: python3 setup.py --headless --prefix ~/CraftRoot --headless
-    - name: Setup Craft and Generate KDE Connect
-      run: |
-        source ~/CraftRoot/craft/craftenv.sh
-        craft extragear/kdeconnect-kde
-        craft --package extragear/kdeconnect-kde
+    - name: Get KDE Connect Dependencies
+      run: source ~/CraftRoot/craft/craftenv.sh && craft --install-deps kdeconnect-kde
+    - name: Build KDE Connect
+      run: source ~/CraftRoot/craft/craftenv.sh && craft extragear/kdeconnect-kde
+    - name: Package KDE Connect
+      run: source ~/CraftRoot/craft/craftenv.sh && craft --package extragear/kdeconnect-kde
     - name: List dmg file that should be found
       run: ls ~/CraftRoot/tmp/
     #- name: Upload DMG files as artifacts
