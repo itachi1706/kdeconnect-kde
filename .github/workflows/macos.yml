@@ -21,18 +21,14 @@ jobs:
       with:
         python-version: 3.8 # Version range or exact version of a Python version to use, using SemVer's version range syntax.
         architecture: x64 # The target architecture (x86, x64) of the Python interpreter.
-    #- name: Install XCode
-    #  run: xcode-select --install
-    #- name: Fix Craft install
-    #  run: /Applications/Python3.8/Install/Certificates.command
     - name: Download Craft
       run: curl https://raw.githubusercontent.com/itachi1706/craft/master/setup/CraftBootstrap.py -o setup.py
     - name: Install Craft
       run: python3 setup.py --headless --prefix ~/CraftRoot --headless
-    - name: Setup Craft
-      run: source ~/CraftRoot/craft/craftenv.sh
-    - name: Generate stuff
-      run: craft kate
+    - name: Setup Craft and Generate Kate
+      run: |
+        source ~/CraftRoot/craft/craftenv.sh
+        craft kate
     - name: List stuff
       run: ls
 
