@@ -28,9 +28,10 @@ jobs:
     - name: Setup Craft and Generate KDE Connect
       run: |
         source ~/CraftRoot/craft/craftenv.sh
+        craft extragear/kdeconnect-kde
         craft --package extragear/kdeconnect-kde
     - name: List dmg file that should be found
-      run: ls /Users/runner/CraftRoot/tmp/
+      run: ls ~/CraftRoot/tmp/
     #- name: Upload DMG files as artifacts
     #  uses: actions/upload-artifact@v2
     #  with:
