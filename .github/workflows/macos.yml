@@ -28,9 +28,9 @@ jobs:
     - name: Get KDE Connect Dependencies
       run: source ~/CraftRoot/craft/craftenv.sh && craft --install-deps kdeconnect-kde
     - name: Build KDE Connect
-      run: source ~/CraftRoot/craft/craftenv.sh && craft extragear/kdeconnect-kde
+      run: source ~/CraftRoot/craft/craftenv.sh && craft kdeconnect-kde
     - name: Package KDE Connect
-      run: source ~/CraftRoot/craft/craftenv.sh && craft --package extragear/kdeconnect-kde
+      run: source ~/CraftRoot/craft/craftenv.sh && craft --package kdeconnect-kde
     - name: List dmg file that should be found
       run: ls ~/CraftRoot/tmp/
     #- name: Upload DMG files as artifacts
